@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Management</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Simple Product Management</p>
+        <h1>Keep products, counts, and totals in sync.</h1>
+      </div>
+      <button id="logout-btn" class="ghost" aria-label="Logout" hidden>Logout</button>
+    </header>
+
+    <main>
+      <section id="login-section" class="panel">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Access</p>
+            <h2>Login</h2>
+          </div>
+        </div>
+        <form id="login-form" class="form-grid">
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" placeholder="admin@example.com" required />
+          </label>
+          <label>
+            <span>Password</span>
+            <input type="password" name="password" placeholder="••••••••" required />
+          </label>
+          <button type="submit" class="primary">Sign in</button>
+          <p id="login-error" class="error" role="alert"></p>
+        </form>
+      </section>
+
+      <section id="app-section" class="panel hidden">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Dashboard</p>
+            <h2>Products & Reports</h2>
+          </div>
+        </div>
+
+        <div class="summary-grid" id="summary">
+          <div class="card">
+            <p class="muted">Products</p>
+            <h3 id="summary-count">0</h3>
+          </div>
+          <div class="card">
+            <p class="muted">Inventory Value</p>
+            <h3 id="summary-value">&#8377;0.00</h3>
+          </div>
+          <div class="card">
+            <p class="muted">Latest Product</p>
+            <h3 id="summary-latest">—</h3>
+          </div>
+        </div>
+
+        <div class="layout">
+          <div class="card">
+            <div class="card-header">
+              <h3>Add / Edit Product</h3>
+            </div>
+            <form id="product-form" class="form-grid">
+              <label>
+                <span>Name</span>
+                <input type="text" name="name" required />
+              </label>
+              <label>
+                <span>Description</span>
+                <input type="text" name="description" />
+              </label>
+              <label>
+                <span>Price</span>
+                <input type="number" name="price" step="0.01" min="0" required />
+              </label>
+              <label>
+                <span>Quantity</span>
+                <input type="number" name="quantity" min="0" required />
+              </label>
+              <button type="submit" class="primary">Save product</button>
+              <input type="hidden" name="id" />
+            </form>
+            <p id="product-message" class="muted"></p>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3>Products</h3>
+              <button id="refresh-btn" class="ghost" type="button">Refresh</button>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Qty</th>
+                    <th>Total</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="products-body"></tbody>
+              </table>
+            </div>
+            <p id="product-error" class="error" role="alert"></p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
