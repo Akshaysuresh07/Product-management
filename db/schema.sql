@@ -24,7 +24,7 @@ VALUES
 ON DUPLICATE KEY UPDATE email = VALUES(email);
 
 INSERT INTO products (name, description, price, quantity) VALUES
-  ('Notebook', 'Hardcover notebook', 8.50, 40),
-  ('Desk Lamp', 'LED adjustable lamp', 24.99, 15),
-  ('Wireless Mouse', 'Ergonomic wireless mouse', 18.75, 25)
+  ('Notebook', 'Hardcover notebook', 45, 40),
+  ('Desk Lamp', 'LED adjustable lamp', 320, 15),
+  ('Wireless Mouse', 'Ergonomic wireless mouse', 950, 5)
 ON DUPLICATE KEY UPDATE name = VALUES(name);
