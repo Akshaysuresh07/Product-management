@@ -16,7 +16,7 @@
    cp .env.example .env
    ```
    Fill `DB_HOST`, `DB_USER`, `DB_PASSWORD`, `DB_NAME`, and `JWT_SECRET`.
-3. (Option A) Use Docker for MySQL (recommended for local dev):
+3. (Option A) Use Docker for MySQL:
    ```bash
    docker compose up -d db
    ```
